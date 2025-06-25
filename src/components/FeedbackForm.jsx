@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
 
 
 export default function FeedbackForm({ onAdd }) {
@@ -20,7 +21,8 @@ export default function FeedbackForm({ onAdd }) {
         setName("");
         setComment("");
         setRating("");
-    };
+
+        toast.success("Feedback submitted successfully!")};
 
     return (
         <form className="space-y-4" onSubmit={jhandleSubmit}>
